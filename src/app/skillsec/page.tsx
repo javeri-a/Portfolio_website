@@ -1,4 +1,6 @@
 
+
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -9,6 +11,7 @@ import {
   FaReact,
   FaGithub,
 } from 'react-icons/fa';
+import { PiOpenAiLogo } from 'react-icons/pi';
 import {
   SiTailwindcss,
   SiTypescript,
@@ -17,55 +20,115 @@ import {
 } from 'react-icons/si';
 
 const skills = [
-  { name: 'HTML5', icon: <FaHtml5 />, level: 'Expert', color: 'text-orange-500' },
-  { name: 'CSS3', icon: <FaCss3Alt />, level: 'Expert', color: 'text-blue-500' },
-  { name: 'JavaScript', icon: <FaJs />, level: 'Expert', color: 'text-yellow-400' },
-  { name: 'TypeScript', icon: <SiTypescript />, level: 'Advanced', color: 'text-blue-400' },
-  { name: 'React.js', icon: <FaReact />, level: 'Advanced', color: 'text-cyan-400' },
-  { name: 'Next.js', icon: <SiNextdotjs />, level: 'Advanced', color: 'text-white' },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 'Expert', color: 'text-teal-300' },
-  { name: 'GitHub', icon: <FaGithub />, level: 'Advanced', color: 'text-gray-300' },
-  { name: 'Python', icon: <SiPython />, level: 'Intermediate', color: 'text-yellow-300' },
+  {
+    name: 'HTML5',
+    icon: <FaHtml5 />,
+    color: 'text-orange-500',
+    note: 'The foundation of every clean UI.',
+  },
+  {
+    name: 'CSS3',
+    icon: <FaCss3Alt />,
+    color: 'text-blue-500',
+    note: 'Design precision meets responsiveness.',
+  },
+  {
+    name: 'JavaScript',
+    icon: <FaJs />,
+    color: 'text-yellow-400',
+    note: 'The heartbeat of interactive logic.',
+  },
+  {
+    name: 'TypeScript',
+    icon: <SiTypescript />,
+    color: 'text-blue-400',
+    note: 'Strict typing for safer, scalable code.',
+  },
+  {
+    name: 'React.js',
+    icon: <FaReact />,
+    color: 'text-cyan-400',
+    note: 'Component-driven frontend at its best.',
+  },
+  {
+    name: 'Next.js',
+    icon: <SiNextdotjs />,
+    color: 'text-white',
+    note: 'Optimized, SEO-first React framework.',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: <SiTailwindcss />,
+    color: 'text-teal-300',
+    note: 'Utility-first styling with elegance.',
+  },
+  {
+    name: 'GitHub',
+    icon: <PiOpenAiLogo />,
+    color: 'text-gray-300',
+    note: 'Versioning meets collaboration.',
+  },
+  {
+    name: 'Python',
+    icon: <SiPython />,
+    color: 'text-yellow-300',
+    note: 'Clean, AI-focused scripting powerhouse.',
+  },
 ];
 
 export default function SkillsSection() {
   return (
-    <section className="relative z-10 w-full px-6 md:px-24 py-28 bg-[#0c0c0c] text-white overflow-hidden">
+    <section id="skillsec" className="relative py-28 px-6 md:px-20 bg-[#0b0b0c] text-white overflow-hidden">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.1 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto text-center space-y-14"
+        className="max-w-5xl mx-auto space-y-16"
       >
-        <div>
-          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight">
+        <div className="text-center">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
             Tech <span className="text-fuchsia-500">Stack</span>
           </h2>
-          <p className="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">
-            Each tool below represents a core part of how I build interactive, AI-infused, future-ready web experiences.
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Each technology here is chosen with purpose — a blend of performance, elegance, and future-proof thinking.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.1, rotate: 1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-xl backdrop-blur-md group hover:border-fuchsia-500 hover:shadow-fuchsia-600/20 transition-all"
+        {/* Structured Rows */}
+        <div className="space-y-12">
+          {skills.reduce((rows: any[][], skill, index) => {
+            const row = Math.floor(index / 3);
+            if (!rows[row]) rows[row] = [];
+            rows[row].push(skill);
+            return rows;
+          }, []).map((rowSkills, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center"
             >
-              <div className={`text-3xl ${skill.color}`}>{skill.icon}</div>
-              <p className="text-md font-semibold tracking-wide">{skill.name}</p>
-              <span className="text-xs text-gray-400 group-hover:text-fuchsia-400 transition">{skill.level}</span>
-            </motion.div>
+              {rowSkills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex flex-col items-center gap-4"
+                >
+                  <div className={`text-5xl ${skill.color}`}>{skill.icon}</div>
+                  <div>
+                    <p className="text-base font-semibold">{skill.name}</p>
+                    <p className="text-sm text-gray-400 mt-1 max-w-xs">{skill.note}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           ))}
         </div>
       </motion.div>
 
-      {/* Glowing effect */}
-      <div className="absolute -top-10 -left-10 w-72 h-72 bg-fuchsia-600 rounded-full blur-[120px] opacity-20 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500 rounded-full blur-[160px] opacity-20 animate-pulse" />
+      {/* Background glow */}
+      <div className="absolute -top-20 -left-28 w-96 h-96 bg-fuchsia-600 opacity-20 blur-[140px] rounded-full animate-pulse" />
+      <div className="absolute -bottom-20 right-0 w-[26rem] h-[26rem] bg-fuchsia-900 opacity-20 blur-[160px] rounded-full animate-pulse" />
     </section>
   );
 }
+

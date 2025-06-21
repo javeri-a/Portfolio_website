@@ -797,7 +797,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white px-4 py-20 sm:px-6 lg:px-24 font-sans relative overflow-hidden">
+    <main id = "contactsec" className="min-h-screen bg-[#0a0a0a] text-white px-4 py-20 sm:px-6 lg:px-24 font-sans relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[url('/dots.svg')] bg-repeat opacity-10 z-0" />
 

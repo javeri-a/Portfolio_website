@@ -13,7 +13,7 @@ import SkillsSection from "./skillsec/page";
 export default function Home() {
   return (
     <div>
-      {/* <Navbar/> */}
+      
 
 
 
@@ -21,9 +21,6 @@ export default function Home() {
       <AboutSection />
       <SkillsSection />
       <Projects />
-
-
-
       <ContactPage />
       <div>
 
