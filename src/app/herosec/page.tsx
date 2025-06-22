@@ -60,7 +60,10 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 leading-relaxed">
-              A front-end developer crafting AI-powered experiences through Next.js, Tailwind CSS, and motion design. Focused on user delight, performance, and future-ready interfaces.
+               I build modern front-end experiences using Next.js and Tailwind CSS.
+Focused on clean design, smooth animations, and seamless performance.
+Creating interfaces that feel intuitive, fast, and ready for what’s next.
+
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -87,11 +90,11 @@ export default function Home() {
             <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] rounded-full relative z-10 border-4 border-transparent bg-gradient-to-tr from-fuchsia-500 to-purple-600 p-1 shadow-2xl">
               <div className="w-full h-full rounded-full bg-[#0a0a0a] flex items-center justify-center">
                 <Image
-                  src="/h1.png"
+                  src="/image.png"
                   alt="Mam Javeria"
-                  width={300}
-                  height={300}
-                  className="rounded-full object-cover"
+                  width={400}
+                  height={400}
+                  className="rounded-full object-cover shadow-lg w-full "
                 />
               </div>
             </div>

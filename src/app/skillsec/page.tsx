@@ -75,7 +75,7 @@ const skills: Skill[] = [
     name: 'OpenAI',
     icon: <PiOpenAiLogo />,
     color: 'text-gray-300',
-    note: 'Versioning meets collaboration.',
+    note: 'Conversational intelligence meets modern interfaces.',
   },
   {
     name: 'Python',
