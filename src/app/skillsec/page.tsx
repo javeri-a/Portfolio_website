@@ -1,6 +1,7 @@
 
 
 
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -9,7 +10,6 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
-  
 } from 'react-icons/fa';
 import { PiOpenAiLogo } from 'react-icons/pi';
 import {
@@ -18,8 +18,17 @@ import {
   SiNextdotjs,
   SiPython,
 } from 'react-icons/si';
+import { ReactNode } from 'react';
 
-const skills = [
+// ✅ Define a proper Skill type
+type Skill = {
+  name: string;
+  icon: ReactNode;
+  color: string;
+  note: string;
+};
+
+const skills: Skill[] = [
   {
     name: 'HTML5',
     icon: <FaHtml5 />,
@@ -78,7 +87,10 @@ const skills = [
 
 export default function SkillsSection() {
   return (
-    <section id="skillsec" className="relative py-28 px-6 md:px-20 bg-[#0b0b0c] text-white overflow-hidden">
+    <section
+      id="skillsec"
+      className="relative py-28 px-6 md:px-20 bg-[#0b0b0c] text-white overflow-hidden"
+    >
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -97,31 +109,33 @@ export default function SkillsSection() {
 
         {/* Structured Rows */}
         <div className="space-y-12">
-          {skills.reduce((rows: any[][], skill, index) => {
-            const row = Math.floor(index / 3);
-            if (!rows[row]) rows[row] = [];
-            rows[row].push(skill);
-            return rows;
-          }, []).map((rowSkills, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center"
-            >
-              {rowSkills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center gap-4"
-                >
-                  <div className={`text-5xl ${skill.color}`}>{skill.icon}</div>
-                  <div>
-                    <p className="text-base font-semibold">{skill.name}</p>
-                    <p className="text-sm text-gray-400 mt-1 max-w-xs">{skill.note}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          ))}
+          {skills
+            .reduce((rows: Skill[][], skill, index) => {
+              const row = Math.floor(index / 3);
+              if (!rows[row]) rows[row] = [];
+              rows[row].push(skill);
+              return rows;
+            }, [])
+            .map((rowSkills, rowIndex) => (
+              <div
+                key={rowIndex}
+                className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center"
+              >
+                {rowSkills.map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    className="flex flex-col items-center gap-4"
+                  >
+                    <div className={`text-5xl ${skill.color}`}>{skill.icon}</div>
+                    <div>
+                      <p className="text-base font-semibold">{skill.name}</p>
+                      <p className="text-sm text-gray-400 mt-1 max-w-xs">{skill.note}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            ))}
         </div>
       </motion.div>
 
@@ -131,5 +145,3 @@ export default function SkillsSection() {
     </section>
   );
 }
-
-
