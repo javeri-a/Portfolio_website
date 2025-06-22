@@ -22,7 +22,7 @@ const projects: Project[] = [
     title: 'Shop.co',
     description:
       'A modern e-commerce platform with a sleek design and smooth animations, built with Next.js and Tailwind CSS.',
-    image: '/image1.png',
+    image: '/h1.png',
     tech: ['Next.js', 'TailwindCSS', 'TypeScript', 'Headless CMS'],
     github: 'https://github.com/javeri-a/shop.co-web.git',
     demo: 'https://marketplace-shopco.vercel.app/',
