@@ -63,7 +63,7 @@ const skills = [
     note: 'Utility-first styling with elegance.',
   },
   {
-    name: 'GitHub',
+    name: 'OpenAI',
     icon: <PiOpenAiLogo />,
     color: 'text-gray-300',
     note: 'Versioning meets collaboration.',
@@ -131,4 +131,5 @@ export default function SkillsSection() {
     </section>
   );
 }
+
 

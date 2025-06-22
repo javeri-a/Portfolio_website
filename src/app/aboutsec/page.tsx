@@ -30,8 +30,8 @@ export default function AboutSection() {
         viewport={{ once: true }}
         className="max-w-6xl mx-auto text-center space-y-14 relative z-10"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-          Who I Am
+        <h2 className="text-6xl md:text-5xl font-extrabold text-white tracking-tight">
+          About <span className="text-fuchsia-500">Me</span>
         </h2>
 
         <p className="text-lg md:text-xl leading-relaxed text-gray-400 max-w-3xl mx-auto">

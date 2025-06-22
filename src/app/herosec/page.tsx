@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaDribbble, FaGithub, FaLinkedinIn, FaBehance, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 // Updated: Array with icon + URL
 const socialLinks = [
@@ -21,6 +22,10 @@ const socialLinks = [
   {
     icon: FaFacebook,
     url: 'https://www.facebook.com/profile.php?id=100056061157348',
+  },
+  {
+    icon: MdEmail,
+    url: 'mailto:javiconnectdev@gmail.com',
   },
 ];
 
@@ -46,7 +51,7 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="max-w-xl text-center md:text-left space-y-6"
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
               Hello, I’m <br />
               <span className="bg-gradient-to-r  from-fuchsia-500 to-pink-500 text-transparent bg-clip-text">
                 Javeria
@@ -59,12 +64,16 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-700 rounded-full font-semibold transition shadow-lg">
-                Download Resume
-              </button>
-              <button className="px-6 py-3 border border-gray-700 hover:border-fuchsia-600 text-gray-300 hover:text-white rounded-full transition">
-                Explore Work
-              </button>
+              <a href="resume.pdf"
+              className="px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-700 rounded-full font-semibold transition shadow-lg">Download Resume</a>
+              
+              <a 
+  href="#projectsec" 
+  className="px-6 py-3 border border-gray-700 hover:border-fuchsia-600 text-gray-300 hover:text-white rounded-full transition"
+>
+  Explore Work
+</a>
+              
             </div>
           </motion.div>
 
