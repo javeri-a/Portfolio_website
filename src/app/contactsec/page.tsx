@@ -68,11 +68,11 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-6xl sm:text-6xl font-extrabold  text-white"
           >
-            Let’s  <span className='text-fuchsia-500'>Connect</span> 
+            Lets  <span className='text-fuchsia-500'>Connect</span> 
           </motion.h2>
 
           <p className="text-gray-400 max-w-md text-base sm:text-lg">
-            I believe in conversations that lead to impact. Whether you have a bold idea or just want to say hello, I’m all ears.
+            I believe in conversations that lead to impact. Whether you have a bold idea or just want to say hello, I am all ears.
           </p>
 
           {/* Contact Info */}

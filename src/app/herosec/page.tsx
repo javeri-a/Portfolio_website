@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaDribbble, FaGithub, FaLinkedinIn, FaBehance, FaTwitter, FaFacebook } from 'react-icons/fa';
+import {  FaGithub, FaLinkedinIn, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 // Updated: Array with icon + URL
