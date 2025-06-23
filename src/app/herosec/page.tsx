@@ -54,9 +54,9 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
               Hello, I’m <br />
               <span className="bg-gradient-to-r  from-fuchsia-500 to-pink-500 text-transparent bg-clip-text">
-                Javeria
+                Javeria    
               </span>
-              <span className='text-2xl bg-clip-text  font-semibold'>(Front-End Developer)</span>
+              <span className='text-xl bg-clip-text  font-light'>  (Front-End Developer)</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 leading-relaxed">
