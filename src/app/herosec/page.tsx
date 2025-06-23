@@ -56,7 +56,7 @@ export default function Home() {
               <span className="bg-gradient-to-r  from-fuchsia-500 to-pink-500 text-transparent bg-clip-text">
                 Javeria    
               </span>
-              <span className='text-xl bg-clip-text  font-light'>  (Front-End Developer)</span>
+              <span className='text-xl bg-clip-text  font-light ml-2'>  (Front-End Developer)</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 leading-relaxed">
