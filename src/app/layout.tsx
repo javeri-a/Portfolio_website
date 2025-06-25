@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/page";
+import SplashCursor from './SplashCursor';
+
+
 
 
 const geistSans = Geist({
@@ -33,6 +36,8 @@ export default function RootLayout({
         
         
         {children}
+        
+<SplashCursor />
       </body>
     </html>
   );
